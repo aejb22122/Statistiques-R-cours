@@ -1,6 +1,6 @@
-# Cours ey  guides
-**UParisSud-statistique-avec-R**
+# Cours et  guides
+**UParisSud-statistiques-avec-R**
 Intro stat R, UPSUD -  42001
 **R Programming JHU**
 
-Atres guides et codes
+Autres guides et codes;
