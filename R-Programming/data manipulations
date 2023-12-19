@@ -1,1 +1,85 @@
 
+setwd("C:/Users/AnnickEudesJean-Bapt/OneDrive - .....")
+
+df <- read.csv("adm2020.csv")
+df$ENRLW[1337]
+
+count(df[is.na(df$ADMSSNM) | is.na(df$ADMSSNW), ])
+
+sum(is.na(df$ADMSSNM) == TRUE | is.na(df$ADMSSNW))
+
+mean(df$ADMSSNM, na.rm = TRUE)
+
+mean(df[!is.na(df$ADMSSNM), c('ADMSSNM') ])
+
+# Load the dplyr package if not already loaded
+library(dplyr)
+
+# Assuming you have a DataFrame named 'df'
+
+# 1. Filtering data
+filtered_df <- df %>%
+  filter(column_name == value)
+
+# 2. Selecting specific columns
+selected_columns_df <- df %>%
+  select(column1, column2)
+
+# 3. Adding new columns
+new_column_df <- df %>%
+  mutate(new_column = calculation)
+
+# 4. Grouping data and calculating summary statistics
+grouped_summary_df <- df %>%
+  group_by(column_to_group_by) %>%
+  summarize(mean_value = mean(numeric_column))
+
+# 5. Sorting data
+sorted_df <- df %>%
+  arrange(column_to_sort_by)
+
+# 6. Joining multiple DataFrames
+merged_df <- left_join(df1, df2, by = "common_column")
+
+# 7. Removing duplicates
+unique_df <- df %>%
+  distinct()
+
+# 8. Creating summary tables (pivot tables)
+summary_table <- df %>%
+  group_by(grouping_column) %>%
+  summarize(mean_value = mean(numeric_column))
+
+# 9. Handling missing values (filter out or impute)
+filtered_missing_df <- df %>%
+  filter(!is.na(column_name))
+
+# 10. Counting unique values in a column
+value_counts <- df %>%
+  count(column_name)
+
+# 11. Performing conditional operations
+conditional_df <- df %>%
+  mutate(new_column = ifelse(condition, true_value, false_value))
+
+# 12. Reshaping data (e.g., converting from wide to long format)
+long_df <- df %>%
+  pivot_longer(cols = starts_with("value_"), names_to = "variable", values_to = "value")
+
+# 13. Creating bins or categories
+binned_df <- df %>%
+  mutate(category_column = cut(numeric_column, breaks = c(0, 25, 50, 75, 100), labels = c("Low", "Medium", "High", "Very High")))
+
+# 14. Calculating cumulative sums or running totals
+cumulative_df <- df %>%
+  mutate(cumulative_total = cumsum(numeric_column))
+
+# 15. Calculating percentages
+percentage_df <- df %>%
+  mutate(percentage = (numeric_column / sum(numeric_column)) * 100)
+
+# 16. Subsetting data based on multiple conditions (AND, OR)
+subset_df <- df %>%
+  filter(condition1 & condition2) # AND
+subset_df <- df %>%
+  filter(condition1 | condition2) # OR
